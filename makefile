@@ -1,7 +1,7 @@
 UGLIFY=vendor/uglifyjs
 
-JS_FILES=src/js/jquery.js\
-src/js/underscore.js\
+JS_FILES=src/js/vendor/jquery.js\
+src/js/vendor/underscore.js\
 src/js/index.js
 
 CSS_FILES=src/scss/index.scss\
