@@ -1,0 +1,12 @@
+/* mobile portrait */
+@media only screen and (max-width: 479px) {
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /* demo code */
+    body{
+      background-color: blue;
+    }
+}

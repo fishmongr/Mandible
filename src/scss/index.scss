@@ -1,3 +1,5 @@
+@import 'mixins';
+
 /* Detailed information: h5bp.com/css */
 @import "html5boilerplate";
 
@@ -8,12 +10,17 @@
 /* Main CSS file. */
 @import "base";
 
-/* Feature specific. */
+/* Page specific. */
 @import "page-home";
 
-/* Section specific. */
-@import "feature-menu";
+/* Feature specific. */
+/* @import "feature-menu"; */
 
 /* Device specific. */
+@import "ipad";
+@import "iphone";
+
 /* dimension specific. */
-/* Misc */
+@import "mobile-landscape";
+@import "mobile-portrait";
+@import "tablet-portrait";
