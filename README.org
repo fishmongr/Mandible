@@ -50,16 +50,17 @@ See the full Facebook talk about responsive design, media queries, and cross-dev
 
 * Mandible
 - is a collection of open-source and custom tools for organizing and prepping a web app for production.
-- includes a copy of [[http://getskeleton.com/][Skeleton]] to get you started with a [[http://www.alistapart.com/articles/responsive-web-design/][responsive]] design.
+- includes a copy of [[http://getskeleton.com/][Skeleton]], and dimension specific CSS files to get you started with a [[http://www.alistapart.com/articles/responsive-web-design/][responsive]] design.
 - makes your app mobile-ready from the start with the right HTML meta and CSS (taken from [[http://html5boilerplate.com/mobile][HTML5 boilerplate]]).
 - gives your web app a (customizable) folder structure for development and production.
 - concatinates and minifies your CSS and JS files.
-- is targetted toward web apps built on JavaScript MVC frameworks (we love [[http://documentcloud.github.com/backbone/][Backbone]]).
+- Comes with [[http://documentcloud.github.com/underscore/#template][Underscore]] for JavaScript templating.
 - allows you to create your own folder hierarchy of JavaScript templates.
-- creates and maintains your production assets (css, js, templates).
+- automatially creates and maintains production assets (css, js, templates).
 - can watch for CSS and template changes and concat them on the fly.
 - Includes a makeFile for concating JS, CSS, and concating templates in one easy step.
 
+Mandible is targetted toward web apps built on JavaScript MVC frameworks (we love [[http://documentcloud.github.com/backbone/][Backbone]]).
 * Mandible works by
 - compressing and minifying your CSS with [[http://sass-lang.com/][Sass]].
 - compresses and minifying your JS with [[https://github.com/mishoo/UglifyJS][UglifyJS]].
