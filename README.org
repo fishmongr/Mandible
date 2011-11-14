@@ -70,7 +70,7 @@ See the full Facebook talk about responsive design, media queries, and cross-dev
 - You need to install Ruby (already installed on all macs).
 - You need to install [[http://sass-lang.com/][Sass]]. =sudo gem install sass=
 - You need to instal [[http://nodejs.org/][Node]]. (Compile it from [[http://nodejs.org/#download][here]].)
-
+Note: Compressed assets are not included in this repo. To see the sample code you must run "make" in the root folder at least once. (Which require you have the above installed.)
 * To use
 ** For developers:
 1. In terminal, run the two shell scripts in =/bin=. Keep them open while you do your development and all your CSS and templates changes are automatically merged into the production ready files.
