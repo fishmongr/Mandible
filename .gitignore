@@ -2,7 +2,7 @@
 bin/.sass-cache/
 assets/index.html
 assets/index_uncompressed.html
-assets/js/compressed.js
-assets/css/compressed.css
+assets/js/index.js
+assets/css/index.css
 .DS_Store?
 Thumbs.db
