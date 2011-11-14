@@ -13,4 +13,12 @@
         numbers: numbers
     }));
 
+    // If this is IE, include respond.js for IE6-8 media query support.
+    if ($.browser.msie){
+        (function(d){
+            var s= d.createElement('script');
+            s.src = 'js/respond.min.js';
+            document.body.appendChild(s);
+        })(document);
+    }
 })();
