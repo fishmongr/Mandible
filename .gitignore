@@ -1,8 +1,8 @@
 .sass-cache/
 bin/.sass-cache/
-assets/index.html
-assets/index_uncompressed.html
-assets/js/index.js
-assets/css/index.css
+prod/index.html
+dev/index.html
+prod/js/index.js
+prod/css/index.css
 .DS_Store?
 Thumbs.db

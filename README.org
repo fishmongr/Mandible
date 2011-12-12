@@ -76,20 +76,22 @@ Note: Compressed assets are not included in this repo. To see the sample code yo
 * To use
 ** For developers:
 1. In terminal, run the two shell scripts in =/bin=. Keep them open while you do your development and all your CSS and templates changes are automatically merged into the production ready files.
-2. While working, view your changes in =/assets/index_uncompressed.html=
+2. While working, view your changes in =/dev/index.html=
 3. When you're done for the day, compress your JavaScript files by typing =make= in the root project folder. In case your bin scripts are off, this will also automatically compress all CSS, JS, and rerender the templates - but only when necessary.
-4. Verify the production file at =/assets/index.html=.
+4. Verify the production file at =/prod/index.html=.
 ** For build managers:
 1. Simply type =make -B= to force all CSS, JS, and templates processes to run. Push to production box(es) and / or CDN.
 
 * Explanation of application architecture
 : .
-: ├── /assets                        <-- "Production" folder container html and compressed assets.
-: │   ├── index.html                 <-- The production-ready file you want to view to launch this webapp.
-: │   └── index_uncompressed.html    <-- The uncompressed js prod version with templates, use this during daily development.
-: ├── /src                           <-- "Development" folder container html and uncompressed assets.
+: ├── /prod                          <-- "Production" folder container html and compressed assets.
+: │   └── index.html                 <-- The production-ready file you want to view to launch this webapp.
+: ├── /dev                           <-- "Development" folder container html and uncompressed assets.
+: │   └── index.html                 <-- The uncompressed js prod version with concatinated js templates, use this during daily development.
+: ├── /src                           <-- "Template" files
 : │   ├── index.html                 <-- Prod file without templates. Just used to generate real prod file. Never use it.
-: │   └── index_uncompressed.html    <-- Dev index file with raw js. Do your development here.
+: │   ├── index_uncompressed.html    <-- Dev index file with raw js. Do your development here.
+: │   └── /templates                 <-- Folder of JavaScript templates, anytime any of these are edited dev and prod pages get automatically updated.
 : ├── /bin                           <-- Dev shell scripts.
 : │   ├── sass-watch.sh              <-- Run this in another terminal tab to watch for css changes. It will automatically concat and minify to assets/css
 : │   └── template-watch.sh          <-- Run this in another terminal tab to watch for template changes. All templates get concatinated into assets/*.html files.
@@ -97,7 +99,7 @@ Note: Compressed assets are not included in this repo. To see the sample code yo
 : └── makefile                       <-- make utility for concatinating and minifying all js (and css and templates) to assets folder.
 
 * Additional tips
-- You should probably put production ready folders =assets/js= and =assets/js= under =.gitignore= so they aren't comitted to your repository (this is done for you.)
+- You should probably put production ready folders =prod/js= and =prod/js= under =.gitignore= so they aren't comitted to your repository (this is done for you.)
 - If you want just the SASS bits steal just the sass script in =/bin/watch-css.sh= and =src/scss/index.scss=.
 - If you want just the js compression features Steal the =makeFile= and the =vendor= folder.
 - If you want just the template concat / watch features clone [[https://github.com/krunkosaurus/NodeInterval][NodeInterval]].

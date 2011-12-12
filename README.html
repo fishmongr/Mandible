@@ -240,11 +240,11 @@ Mandible is targetted toward web apps built on JavaScript MVC frameworks (we lov
 <ol>
 <li>In terminal, run the two shell scripts in <code>/bin</code>. Keep them open while you do your development and all your CSS and templates changes are automatically merged into the production ready files.
 </li>
-<li>While working, view your changes in <code>/assets/index_uncompressed.html</code>
+<li>While working, view your changes in <code>/dev/index.html</code>
 </li>
 <li>When you're done for the day, compress your JavaScript files by typing <code>make</code> in the root project folder. In case your bin scripts are off, this will also automatically compress all CSS, JS, and rerender the templates - but only when necessary.
 </li>
-<li>Verify the production file at <code>/assets/index.html</code>.
+<li>Verify the production file at <code>/prod/index.html</code>.
 </li>
 </ol>
 
@@ -273,12 +273,14 @@ Mandible is targetted toward web apps built on JavaScript MVC frameworks (we lov
 
 <pre class="example">
 .
-├── /assets                        &lt;-- "Production" folder container html and compressed assets.
-│   ├── index.html                 &lt;-- The production-ready file you want to view to launch this webapp.
-│   └── index_uncompressed.html    &lt;-- The uncompressed js prod version with templates, use this during daily development.
-├── /src                           &lt;-- "Development" folder container html and uncompressed assets.
+├── /prod                          &lt;-- "Production" folder container html and compressed assets.
+│   └── index.html                 &lt;-- The production-ready file you want to view to launch this webapp.
+├── /dev                           &lt;-- "Development" folder container html and uncompressed assets.
+│   └── index.html                 &lt;-- The uncompressed js prod version with concatinated js templates, use this during daily development.
+├── /src                           &lt;-- "Template" files
 │   ├── index.html                 &lt;-- Prod file without templates. Just used to generate real prod file. Never use it.
-│   └── index_uncompressed.html    &lt;-- Dev index file with raw js. Do your development here.
+│   ├── index_uncompressed.html    &lt;-- Dev index file with raw js. Do your development here.
+│   └── /templates                 &lt;-- Folder of JavaScript templates, anytime any of these are edited dev and prod pages get automatically updated.
 ├── /bin                           &lt;-- Dev shell scripts.
 │   ├── sass-watch.sh              &lt;-- Run this in another terminal tab to watch for css changes. It will automatically concat and minify to assets/css
 │   └── template-watch.sh          &lt;-- Run this in another terminal tab to watch for template changes. All templates get concatinated into assets/*.html files.
@@ -296,7 +298,7 @@ Mandible is targetted toward web apps built on JavaScript MVC frameworks (we lov
 <div class="outline-text-2" id="text-7">
 
 <ul>
-<li>You should probably put production ready folders <code>assets/js</code> and <code>assets/js</code> under <code>.gitignore</code> so they aren't comitted to your repository (this is done for you.)
+<li>You should probably put production ready folders <code>prod/js</code> and <code>prod/js</code> under <code>.gitignore</code> so they aren't comitted to your repository (this is done for you.)
 </li>
 <li>If you want just the SASS bits steal just the sass script in <code>/bin/watch-css.sh</code> and <code>src/scss/index.scss</code>.
 </li>
